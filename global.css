@@ -1380,6 +1380,20 @@ h1 {
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
+/* Fix white background caused by browser autofill */
+.form-group input:-webkit-autofill,
+.form-group textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0f0f0f inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Keep background transparent on focus */
+.form-group input:focus,
+.form-group textarea:focus {
+  background: transparent;
+}
+
 
 .form-group {
   position: relative;
